@@ -10,6 +10,6 @@ df2=spark.read.csv("/root/postes.csv",inferSchema=True,sep=',',header=True)
 df1.registerTempTable('table1') 
 df2.registerTempTable('table2')
 tmps1=time.time()
-spark.sql('select count(*) from table1 join table 2 on CO_EXT=PO_NOM ').show()
+spark.sql('select * from table1 join table2 on CO_EXT=PO_NOM limit 50').show()
 tmps2=time.time()-tmps1
 print(tmps2) 
